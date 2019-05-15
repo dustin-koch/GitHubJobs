@@ -11,6 +11,9 @@
 		CA396A6F228BA598006FC48D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA396A6D228BA598006FC48D /* Main.storyboard */; };
 		CA396A71228BA599006FC48D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA396A70228BA599006FC48D /* Assets.xcassets */; };
 		CA396A74228BA599006FC48D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA396A72228BA599006FC48D /* LaunchScreen.storyboard */; };
+		CA396A80228BADC3006FC48D /* JobController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA396A7F228BADC3006FC48D /* JobController.swift */; };
+		CA396A83228BB4B9006FC48D /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA396A82228BB4B9006FC48D /* Job.swift */; };
+		CA396A85228BBEBE006FC48D /* JobListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA396A84228BBEBE006FC48D /* JobListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		CA396A70228BA599006FC48D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA396A73228BA599006FC48D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA396A75228BA599006FC48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA396A7F228BADC3006FC48D /* JobController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobController.swift; sourceTree = "<group>"; };
+		CA396A82228BB4B9006FC48D /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		CA396A84228BBEBE006FC48D /* JobListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				CA396A6D228BA598006FC48D /* Main.storyboard */,
+				CA396A86228BBEC9006FC48D /* View Controllers */,
+				CA396A81228BADC8006FC48D /* Model Controller */,
+				CA396A7E228BA71E006FC48D /* Model */,
 				CA396A7B228BA5BA006FC48D /* Resources */,
 			);
 			path = GitHub_Jobs;
@@ -67,6 +76,30 @@
 				CA396A75228BA599006FC48D /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CA396A7E228BA71E006FC48D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA396A82228BB4B9006FC48D /* Job.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA396A81228BADC8006FC48D /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CA396A7F228BADC3006FC48D /* JobController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		CA396A86228BBEC9006FC48D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA396A84228BBEBE006FC48D /* JobListTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA396A80228BADC3006FC48D /* JobController.swift in Sources */,
 				CA396A6A228BA598006FC48D /* AppDelegate.swift in Sources */,
+				CA396A85228BBEBE006FC48D /* JobListTableViewController.swift in Sources */,
+				CA396A83228BB4B9006FC48D /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
