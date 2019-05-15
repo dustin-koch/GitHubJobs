@@ -16,6 +16,8 @@ class JobController {
     //MARK: - Properties
     let baseURL = URL(string: "https://jobs.github.com/positions.json?description=")
     var jobs: [Job]?
+    var jobString: String = "iOS"
+    var location: Any = "San Jose, CA"
     
     //MARK: - CRUD functions
     func fetchJobsWith(searchTerm: String, location: String, completion: @escaping () -> Void) {

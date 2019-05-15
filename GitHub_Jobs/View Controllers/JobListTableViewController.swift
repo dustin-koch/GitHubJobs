@@ -13,16 +13,21 @@ class JobListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
-        JobController.shared.fetchJobsWith(searchTerm: "ios", location: "95116") {
+        JobController.shared.fetchJobsWith(searchTerm: "iOS", location: "95116") {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
-
-    // MARK: - Table view data source
+    
+    //MARK: - IB Actions
+    @IBAction func searchButtonTapped(_ sender: UIBarButtonItem) {
+        presentAlertController()
+    }
+    
+    // MARK: - Table view data source methods
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Jobs in your area..."
+        return "\(JobController.shared.jobString) jobs in \(JobController.shared.location)..."
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,51 +43,57 @@ class JobListTableViewController: UITableViewController {
 
         return cell
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    // MARK: - Navigation segue to detail view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        //IIDOO
+        if segue.identifier == "toJobDetailView" {
+            guard let index = tableView.indexPathForSelectedRow?.row else { return }
+            if let destinationVC = segue.destination as? JobDetailViewController {
+                guard let job = JobController.shared.jobs?[index] else { return }
+                destinationVC.job = job
+            }
+        }
     }
-    */
+    
+    //MARK: - Search Button Alert Controller
+    func presentAlertController() {
+        let searchAlertController = UIAlertController(title: "Engineering Job Search", message: "Enter job and location here 👇🏽", preferredStyle: .alert)
+        searchAlertController.addTextField { (jobField) in
+            jobField.placeholder = "Enter job description..."
+        }
+        searchAlertController.addTextField { (locationField) in
+            locationField.placeholder = "Filter by city, state, zip code, or country"
+        }
+        let dismissAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
+        let searchAction = UIAlertAction.init(title: "Search", style: .default) { (_) in
+            guard let jobText = searchAlertController.textFields?.first?.text,
+            searchAlertController.textFields?.first?.text != "",
+            let locationText = searchAlertController.textFields?.last?.text,
+                searchAlertController.textFields?.last?.text != "" else { return }
+            JobController.shared.fetchJobsWith(searchTerm: jobText, location: locationText, completion: {
+                DispatchQueue.main.async {
+                    JobController.shared.jobString = jobText
+                    JobController.shared.location = locationText
+                    if JobController.shared.jobs! == [] {
+                        self.presentNoJobAlert()
+                    }
+                    self.tableView.reloadData()
+                }
+            })
+        }
+        searchAlertController.addAction(dismissAction)
+        searchAlertController.addAction(searchAction)
+        self.present(searchAlertController, animated: true, completion: nil)
+    }
+    
+    func presentNoJobAlert() {
+        let noJobAlertController = UIAlertController(title: "Sorry... No jobs like that", message: "Search again with different criteria/filters", preferredStyle: .alert)
+        let dismissAction = UIAlertAction.init(title: "Shucks", style: .cancel, handler: nil)
+        noJobAlertController.addAction(dismissAction)
+        self.present(noJobAlertController, animated: true, completion: nil)
+    }
 
-}
+}//END OF CLASS
+
+

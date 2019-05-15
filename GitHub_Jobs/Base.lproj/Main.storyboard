@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Job List Table View Controller-->
+        <!--GitHub Job Search-->
         <scene sceneID="xHM-JG-qim">
             <objects>
                 <tableViewController id="r85-lT-lO0" customClass="JobListTableViewController" customModule="GitHub_Jobs" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,6 +42,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="9Sk-J9-vnN" kind="show" identifier="toJobDetailView" id="qfS-a3-Q5z"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -48,11 +52,83 @@
                             <outlet property="delegate" destination="r85-lT-lO0" id="su0-DB-BwU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3eP-FJ-thH"/>
+                    <navigationItem key="navigationItem" title="GitHub Job Search" id="3eP-FJ-thH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="T2u-bd-Ik8">
+                            <connections>
+                                <action selector="searchButtonTapped:" destination="r85-lT-lO0" id="IJI-fz-WYh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ae-Rs-BuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1255.072463768116" y="125.89285714285714"/>
+        </scene>
+        <!--Job Detail View Controller-->
+        <scene sceneID="VtN-vP-R7U">
+            <objects>
+                <viewController id="9Sk-J9-vnN" customClass="JobDetailViewController" customModule="GitHub_Jobs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vUH-Rf-nLc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="MxX-X1-0Wj">
+                                <rect key="frame" x="10" y="98" width="394" height="774"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(job title)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MW3-g4-YL4">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="24"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(company)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afM-uS-7RO">
+                                        <rect key="frame" x="0.0" y="37" width="394" height="19.5"/>
+                                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAC-Oa-DVn">
+                                        <rect key="frame" x="19.5" y="69.5" width="355" height="704.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MW3-g4-YL4" secondAttribute="trailing" multiplier="0.9" id="HgV-fS-nL0"/>
+                                    <constraint firstItem="lAC-Oa-DVn" firstAttribute="width" secondItem="MxX-X1-0Wj" secondAttribute="width" multiplier="0.9" id="Oi7-YM-9Re"/>
+                                    <constraint firstItem="afM-uS-7RO" firstAttribute="width" secondItem="MW3-g4-YL4" secondAttribute="width" id="duB-uP-ukq"/>
+                                    <constraint firstItem="MW3-g4-YL4" firstAttribute="leading" secondItem="MxX-X1-0Wj" secondAttribute="leading" multiplier="0.9" id="qdD-A6-441"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yfi-LK-JlW" firstAttribute="trailing" secondItem="MxX-X1-0Wj" secondAttribute="trailing" constant="10" id="QRF-PZ-YEG"/>
+                            <constraint firstItem="MxX-X1-0Wj" firstAttribute="leading" secondItem="yfi-LK-JlW" secondAttribute="leading" constant="10" id="Vkn-03-n1s"/>
+                            <constraint firstItem="MxX-X1-0Wj" firstAttribute="bottom" secondItem="yfi-LK-JlW" secondAttribute="bottom" constant="10" id="c0x-1j-Bux"/>
+                            <constraint firstItem="MxX-X1-0Wj" firstAttribute="top" secondItem="yfi-LK-JlW" secondAttribute="top" constant="10" id="w3G-xa-4M8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yfi-LK-JlW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H0p-jD-wVw">
+                        <barButtonItem key="rightBarButtonItem" title="Share Details" id="TRH-Ss-2c3">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="9Sk-J9-vnN" id="zWM-CP-hCA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="companyNameLabel" destination="afM-uS-7RO" id="g2v-p0-O8y"/>
+                        <outlet property="jobDescriptionTextView" destination="lAC-Oa-DVn" id="fep-Nq-w8p"/>
+                        <outlet property="jobTitleLabel" destination="MW3-g4-YL4" id="AM6-pt-DeJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hxo-fq-fgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037.68115942029" y="125.89285714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iaR-Fh-SkF">

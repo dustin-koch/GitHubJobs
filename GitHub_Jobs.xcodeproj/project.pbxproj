@@ -14,6 +14,7 @@
 		CA396A80228BADC3006FC48D /* JobController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA396A7F228BADC3006FC48D /* JobController.swift */; };
 		CA396A83228BB4B9006FC48D /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA396A82228BB4B9006FC48D /* Job.swift */; };
 		CA396A85228BBEBE006FC48D /* JobListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA396A84228BBEBE006FC48D /* JobListTableViewController.swift */; };
+		CAAB9719228C79BB0096DB78 /* JobDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB9718228C79BB0096DB78 /* JobDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CA396A7F228BADC3006FC48D /* JobController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobController.swift; sourceTree = "<group>"; };
 		CA396A82228BB4B9006FC48D /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		CA396A84228BBEBE006FC48D /* JobListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListTableViewController.swift; sourceTree = "<group>"; };
+		CAAB9718228C79BB0096DB78 /* JobDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				CA396A84228BBEBE006FC48D /* JobListTableViewController.swift */,
+				CAAB9718228C79BB0096DB78 /* JobDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			files = (
 				CA396A80228BADC3006FC48D /* JobController.swift in Sources */,
 				CA396A6A228BA598006FC48D /* AppDelegate.swift in Sources */,
+				CAAB9719228C79BB0096DB78 /* JobDetailViewController.swift in Sources */,
 				CA396A85228BBEBE006FC48D /* JobListTableViewController.swift in Sources */,
 				CA396A83228BB4B9006FC48D /* Job.swift in Sources */,
 			);
