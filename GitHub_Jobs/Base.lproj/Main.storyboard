@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eSB-0q-X6W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="938-vL-sN3">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,92 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="H4f-jn-Gyo">
+            <objects>
+                <viewController id="NVY-hs-syc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Tp-q1-Dr4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UX-GU-XXb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GitHub" translatesAutoresizingMaskIntoConstraints="NO" id="oqP-At-Oq2">
+                                        <rect key="frame" x="67" y="247" width="280" height="280"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub Jobs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khv-Ga-PtE">
+                                        <rect key="frame" x="120" y="119.5" width="174" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pre-7g-lz2">
+                                        <rect key="frame" x="35" y="542" width="344" height="81.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for your perfect placement by job description/title and location" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alu-Gw-PHI">
+                                                <rect key="frame" x="13.5" y="0.0" width="317.5" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share/view jobs to pursue later" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdI-88-pYQ">
+                                                <rect key="frame" x="54" y="61" width="236" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qoy-Wn-iAB">
+                                        <rect key="frame" x="137" y="724" width="140" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                        <state key="normal" title="TAP TO CONTINUE">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="r85-lT-lO0" kind="show" id="YSC-Cy-rc4"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTful API Practice - Dustin Koch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiN-sZ-rCA">
+                                        <rect key="frame" x="74" y="190.5" width="266.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="khv-Ga-PtE" firstAttribute="centerX" secondItem="7UX-GU-XXb" secondAttribute="centerX" id="5Vt-2j-zL4"/>
+                                    <constraint firstItem="alu-Gw-PHI" firstAttribute="centerX" secondItem="7UX-GU-XXb" secondAttribute="centerX" id="CvD-id-PyN"/>
+                                    <constraint firstItem="Qoy-Wn-iAB" firstAttribute="centerX" secondItem="7UX-GU-XXb" secondAttribute="centerX" id="Dwa-ow-njJ"/>
+                                    <constraint firstItem="CiN-sZ-rCA" firstAttribute="top" secondItem="khv-Ga-PtE" secondAttribute="bottom" constant="35" id="Ksm-nV-phb"/>
+                                    <constraint firstItem="oqP-At-Oq2" firstAttribute="top" secondItem="CiN-sZ-rCA" secondAttribute="bottom" constant="36" id="LPS-E9-9eA"/>
+                                    <constraint firstAttribute="trailing" secondItem="pre-7g-lz2" secondAttribute="trailing" constant="35" id="PJu-hL-sG5"/>
+                                    <constraint firstItem="CiN-sZ-rCA" firstAttribute="centerX" secondItem="7UX-GU-XXb" secondAttribute="centerX" id="X26-FJ-Sv7"/>
+                                    <constraint firstItem="pre-7g-lz2" firstAttribute="leading" secondItem="7UX-GU-XXb" secondAttribute="leading" constant="35" id="XzR-2f-n0A"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qoy-Wn-iAB" secondAttribute="bottom" constant="20" id="e4T-Wr-0jW"/>
+                                    <constraint firstItem="oqP-At-Oq2" firstAttribute="centerX" secondItem="7UX-GU-XXb" secondAttribute="centerX" id="l6Y-yc-fBP"/>
+                                    <constraint firstItem="oqP-At-Oq2" firstAttribute="centerY" secondItem="7UX-GU-XXb" secondAttribute="centerY" id="okH-6V-wh6"/>
+                                    <constraint firstItem="pre-7g-lz2" firstAttribute="top" secondItem="oqP-At-Oq2" secondAttribute="bottom" constant="15" id="vXp-6J-rN0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SWI-nc-h9G" firstAttribute="bottom" secondItem="7UX-GU-XXb" secondAttribute="bottom" id="41J-lt-Bf0"/>
+                            <constraint firstItem="7UX-GU-XXb" firstAttribute="leading" secondItem="SWI-nc-h9G" secondAttribute="leading" id="USH-Ri-P7e"/>
+                            <constraint firstItem="7UX-GU-XXb" firstAttribute="top" secondItem="SWI-nc-h9G" secondAttribute="top" id="dIl-Q0-0XK"/>
+                            <constraint firstItem="SWI-nc-h9G" firstAttribute="trailing" secondItem="7UX-GU-XXb" secondAttribute="trailing" id="tRG-KF-hyQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SWI-nc-h9G"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pOI-qj-TDe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WDe-Me-bRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1372" y="126"/>
+        </scene>
         <!--GitHub Job Search-->
         <scene sceneID="xHM-JG-qim">
             <objects>
@@ -53,6 +139,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="GitHub Job Search" id="3eP-FJ-thH">
+                        <barButtonItem key="backBarButtonItem" title="Results" id="kT4-7E-SBp"/>
+                        <barButtonItem key="leftBarButtonItem" id="bAk-AK-8Ot"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="T2u-bd-Ik8">
                             <connections>
                                 <action selector="searchButtonTapped:" destination="r85-lT-lO0" id="IJI-fz-WYh"/>
@@ -62,7 +150,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ae-Rs-BuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1255.072463768116" y="125.89285714285714"/>
+            <point key="canvasLocation" x="2165.217391304348" y="125.89285714285714"/>
         </scene>
         <!--Job Detail View Controller-->
         <scene sceneID="VtN-vP-R7U">
@@ -128,25 +216,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hxo-fq-fgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2037.68115942029" y="125.89285714285714"/>
+            <point key="canvasLocation" x="2947.826086956522" y="125.89285714285714"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="iaR-Fh-SkF">
+        <scene sceneID="ne7-Qc-1HA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eSB-0q-X6W" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="938-vL-sN3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PlD-5V-uwm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j51-NV-Hul">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="r85-lT-lO0" kind="relationship" relationship="rootViewController" id="yzM-Nm-JgV"/>
+                        <segue destination="NVY-hs-syc" kind="relationship" relationship="rootViewController" id="G1P-rW-DcX"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aEj-Qu-v26" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rjH-Gt-qBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="344.92753623188406" y="125.89285714285714"/>
+            <point key="canvasLocation" x="577" y="126"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GitHub" width="280" height="280"/>
+    </resources>
 </document>

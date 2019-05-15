@@ -58,7 +58,7 @@ class JobListTableViewController: UITableViewController {
     
     //MARK: - Search Button Alert Controller
     func presentAlertController() {
-        let searchAlertController = UIAlertController(title: "Engineering Job Search", message: "Enter job and location here 👇🏽", preferredStyle: .alert)
+        let searchAlertController = UIAlertController(title: "Engineering Search", message: "Enter job and location here 👇🏽", preferredStyle: .alert)
         searchAlertController.addTextField { (jobField) in
             jobField.placeholder = "Enter job description..."
         }
