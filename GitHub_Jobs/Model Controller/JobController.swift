@@ -14,7 +14,7 @@ class JobController {
     static let shared = JobController()
 
     //MARK: - Properties
-    let baseURL = URL(string: "https://jobs.github.com/positions.json?description=")
+    let baseURL = URL(string: "https://jobs.github.com/positions.json")
     var jobs: [Job]?
     var jobString: String = "iOS"
     var location: Any = "San Jose, CA"
@@ -26,9 +26,8 @@ class JobController {
         let descriptionSearchQuery = URLQueryItem(name: "description", value: searchTerm)
         let locationQuery = URLQueryItem(name: "location", value: location)
         components?.queryItems = [descriptionSearchQuery, locationQuery]
-        
         guard let finalURL = components?.url else { return }
-        print(finalURL)
+//        print(finalURL)
         
         let dataTask = URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
             if let error = error {

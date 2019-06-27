@@ -15,11 +15,11 @@ class JobDetailViewController: UIViewController, MFMailComposeViewControllerDele
     var job: Job?
     
     //MARK: - IB Outlets
-    
     @IBOutlet weak var jobTitleLabel: UILabel!
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var jobDescriptionTextView: UITextView!
     
+    //MARK: - Lifecycle functions
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         updateView()
@@ -40,14 +40,14 @@ class JobDetailViewController: UIViewController, MFMailComposeViewControllerDele
         guard let job = job else { return }
         jobTitleLabel.text = job.title
         companyNameLabel.text = job.company
-        guard var text = job.description else { return }
+        guard let text = job.description else { return }
         jobDescriptionTextView.text = cleanUpText(string: text)
     }
     func openJobFromGitHub() {
         guard let job = job,
             let jobstring = job.url,
             let jobURL = URL(string: jobstring) else { return }
-        UIApplication.shared.openURL(jobURL)
+        UIApplication.shared.open(jobURL)
     }
     func cleanUpText(string: String) -> String {
         var stringToEdit = string
