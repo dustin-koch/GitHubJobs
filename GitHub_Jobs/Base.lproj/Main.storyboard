@@ -25,7 +25,7 @@
                                         <rect key="frame" x="67" y="247" width="280" height="280"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub Jobs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khv-Ga-PtE">
-                                        <rect key="frame" x="120" y="119.5" width="174" height="36"/>
+                                        <rect key="frame" x="120" y="105.5" width="174" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -53,12 +53,15 @@
                                         <state key="normal" title="TAP TO CONTINUE">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="r85-lT-lO0" kind="show" id="YSC-Cy-rc4"/>
-                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTful API Practice - Dustin Koch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiN-sZ-rCA">
-                                        <rect key="frame" x="74" y="190.5" width="266.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTful API Practice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiN-sZ-rCA">
+                                        <rect key="frame" x="128" y="176.5" width="158" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS 27 - DevMountain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tr-bA-QQa">
+                                        <rect key="frame" x="123" y="205" width="168.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -69,14 +72,16 @@
                                     <constraint firstItem="khv-Ga-PtE" firstAttribute="centerX" secondItem="7UX-GU-XXb" secondAttribute="centerX" id="5Vt-2j-zL4"/>
                                     <constraint firstItem="alu-Gw-PHI" firstAttribute="centerX" secondItem="7UX-GU-XXb" secondAttribute="centerX" id="CvD-id-PyN"/>
                                     <constraint firstItem="Qoy-Wn-iAB" firstAttribute="centerX" secondItem="7UX-GU-XXb" secondAttribute="centerX" id="Dwa-ow-njJ"/>
+                                    <constraint firstItem="9tr-bA-QQa" firstAttribute="top" secondItem="CiN-sZ-rCA" secondAttribute="bottom" constant="8" id="IHS-VX-XSO"/>
                                     <constraint firstItem="CiN-sZ-rCA" firstAttribute="top" secondItem="khv-Ga-PtE" secondAttribute="bottom" constant="35" id="Ksm-nV-phb"/>
-                                    <constraint firstItem="oqP-At-Oq2" firstAttribute="top" secondItem="CiN-sZ-rCA" secondAttribute="bottom" constant="36" id="LPS-E9-9eA"/>
+                                    <constraint firstItem="oqP-At-Oq2" firstAttribute="top" secondItem="CiN-sZ-rCA" secondAttribute="bottom" constant="50" id="LPS-E9-9eA"/>
                                     <constraint firstAttribute="trailing" secondItem="pre-7g-lz2" secondAttribute="trailing" constant="35" id="PJu-hL-sG5"/>
                                     <constraint firstItem="CiN-sZ-rCA" firstAttribute="centerX" secondItem="7UX-GU-XXb" secondAttribute="centerX" id="X26-FJ-Sv7"/>
                                     <constraint firstItem="pre-7g-lz2" firstAttribute="leading" secondItem="7UX-GU-XXb" secondAttribute="leading" constant="35" id="XzR-2f-n0A"/>
                                     <constraint firstAttribute="bottom" secondItem="Qoy-Wn-iAB" secondAttribute="bottom" constant="20" id="e4T-Wr-0jW"/>
                                     <constraint firstItem="oqP-At-Oq2" firstAttribute="centerX" secondItem="7UX-GU-XXb" secondAttribute="centerX" id="l6Y-yc-fBP"/>
                                     <constraint firstItem="oqP-At-Oq2" firstAttribute="centerY" secondItem="7UX-GU-XXb" secondAttribute="centerY" id="okH-6V-wh6"/>
+                                    <constraint firstItem="9tr-bA-QQa" firstAttribute="centerX" secondItem="CiN-sZ-rCA" secondAttribute="centerX" id="slA-r6-P9k"/>
                                     <constraint firstItem="pre-7g-lz2" firstAttribute="top" secondItem="oqP-At-Oq2" secondAttribute="bottom" constant="15" id="vXp-6J-rN0"/>
                                 </constraints>
                             </view>
@@ -95,128 +100,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDe-Me-bRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1372" y="126"/>
-        </scene>
-        <!--GitHub Job Search-->
-        <scene sceneID="xHM-JG-qim">
-            <objects>
-                <tableViewController id="r85-lT-lO0" customClass="JobListTableViewController" customModule="GitHub_Jobs" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UAm-G3-ZIK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="jobCell" textLabel="Wts-BU-aZq" detailTextLabel="jnm-uJ-lOA" rowHeight="92" style="IBUITableViewCellStyleSubtitle" id="XSv-SA-NSr">
-                                <rect key="frame" x="0.0" y="28" width="414" height="92"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XSv-SA-NSr" id="chS-mw-QOu" customClass="JobTableViewCell" customModule="GitHub_Jobs" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="91.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wts-BU-aZq">
-                                            <rect key="frame" x="20" y="26" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jnm-uJ-lOA">
-                                            <rect key="frame" x="20" y="49.5" width="44" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="9Sk-J9-vnN" kind="show" identifier="toJobDetailView" id="qfS-a3-Q5z"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="r85-lT-lO0" id="EUJ-Gx-fi9"/>
-                            <outlet property="delegate" destination="r85-lT-lO0" id="su0-DB-BwU"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="GitHub Job Search" id="3eP-FJ-thH">
-                        <barButtonItem key="backBarButtonItem" title="Results" id="kT4-7E-SBp"/>
-                        <barButtonItem key="leftBarButtonItem" id="bAk-AK-8Ot"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="T2u-bd-Ik8">
-                            <connections>
-                                <action selector="searchButtonTapped:" destination="r85-lT-lO0" id="IJI-fz-WYh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ae-Rs-BuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2165.217391304348" y="125.89285714285714"/>
-        </scene>
-        <!--Job Detail View Controller-->
-        <scene sceneID="VtN-vP-R7U">
-            <objects>
-                <viewController id="9Sk-J9-vnN" customClass="JobDetailViewController" customModule="GitHub_Jobs" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vUH-Rf-nLc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="MxX-X1-0Wj">
-                                <rect key="frame" x="10" y="98" width="394" height="774"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(job title)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MW3-g4-YL4">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="24"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(company)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afM-uS-7RO">
-                                        <rect key="frame" x="0.0" y="37" width="394" height="19.5"/>
-                                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAC-Oa-DVn">
-                                        <rect key="frame" x="19.5" y="69.5" width="355" height="704.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="MW3-g4-YL4" secondAttribute="trailing" multiplier="0.9" id="HgV-fS-nL0"/>
-                                    <constraint firstItem="lAC-Oa-DVn" firstAttribute="width" secondItem="MxX-X1-0Wj" secondAttribute="width" multiplier="0.9" id="Oi7-YM-9Re"/>
-                                    <constraint firstItem="afM-uS-7RO" firstAttribute="width" secondItem="MW3-g4-YL4" secondAttribute="width" id="duB-uP-ukq"/>
-                                    <constraint firstItem="MW3-g4-YL4" firstAttribute="leading" secondItem="MxX-X1-0Wj" secondAttribute="leading" multiplier="0.9" id="qdD-A6-441"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="yfi-LK-JlW" firstAttribute="trailing" secondItem="MxX-X1-0Wj" secondAttribute="trailing" constant="10" id="QRF-PZ-YEG"/>
-                            <constraint firstItem="MxX-X1-0Wj" firstAttribute="leading" secondItem="yfi-LK-JlW" secondAttribute="leading" constant="10" id="Vkn-03-n1s"/>
-                            <constraint firstItem="MxX-X1-0Wj" firstAttribute="bottom" secondItem="yfi-LK-JlW" secondAttribute="bottom" constant="10" id="c0x-1j-Bux"/>
-                            <constraint firstItem="MxX-X1-0Wj" firstAttribute="top" secondItem="yfi-LK-JlW" secondAttribute="top" constant="10" id="w3G-xa-4M8"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="yfi-LK-JlW"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="H0p-jD-wVw">
-                        <barButtonItem key="rightBarButtonItem" title="Share Details" id="TRH-Ss-2c3">
-                            <connections>
-                                <action selector="saveButtonTapped:" destination="9Sk-J9-vnN" id="zWM-CP-hCA"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="companyNameLabel" destination="afM-uS-7RO" id="g2v-p0-O8y"/>
-                        <outlet property="jobDescriptionTextView" destination="lAC-Oa-DVn" id="fep-Nq-w8p"/>
-                        <outlet property="jobTitleLabel" destination="MW3-g4-YL4" id="AM6-pt-DeJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hxo-fq-fgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2947.826086956522" y="125.89285714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ne7-Qc-1HA">

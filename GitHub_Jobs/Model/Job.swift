@@ -8,10 +8,3 @@
 
 import Foundation
 
-struct Job: Decodable, Equatable {
-    let url: String?
-    let company: String?
-    let title: String?
-    let description: String?
-}
-
